@@ -1,29 +1,25 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import {
-  addPatient as addPatientAction,
-  deletePatient as deletePatientAction,
-} from "../redux/actions";
+  addPatient,
+  deletePatient,
+} from "../features/patientSlice";
 
 const usePatient = () => {
   const patients = useSelector(
-    (state) => state.patients
+    (state) => state.patient.patients
   );
 
   const dispatch = useDispatch();
 
-  const addPatient = (name) => {
-    dispatch(addPatientAction(name));
-  };
-
-  const deletePatient = (index) => {
-    dispatch(deletePatientAction(index));
-  };
-
   return {
     patients,
-    addPatient,
-    deletePatient,
+
+    addPatient: (name) =>
+      dispatch(addPatient(name)),
+
+    deletePatient: (index) =>
+      dispatch(deletePatient(index)),
   };
 };
 

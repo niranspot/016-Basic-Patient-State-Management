@@ -1,8 +1,7 @@
 import usePatient from "../hooks/usePatient";
 
 function PatientList() {
-  const { patients, deletePatient } =
-    usePatient();
+  const { patients, deletePatient } = usePatient();
 
   return (
     <div>
@@ -11,7 +10,7 @@ function PatientList() {
       {patients.length === 0 ? (
         <p>No Patients Found</p>
       ) : (
-        <ul>
+        <ul className="displaylist">
           {patients.map((patient, index) => (
             <li key={index}>
               {patient}

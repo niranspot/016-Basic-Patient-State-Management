@@ -16,6 +16,15 @@
   margin-bottom: 20px;
 }
 
+
+.displaylist li{
+  padding: 10px;
+}
+.displaylist li button{
+  background: rgb(235, 33, 33);
+  margin-left: 5px;
+}
+
 input {
   padding: 8px;
   margin-right: 10px;
@@ -24,4 +33,7 @@ input {
 button {
   padding: 8px 12px;
   cursor: pointer;
+  background: rgb(77, 77, 224);
+  color: azure;
+  font-weight: bold;
 }
